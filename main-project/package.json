@@ -9,8 +9,14 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "element-plus": "^2.8.8",
+    "pinia": "^2.2.6",
+    "sass": "^1.81.0",
+    "sass-loader": "9.x",
+    "unplugin-auto-import": "0.16.1",
     "vue": "^3.2.13",
     "vue-router": "^4.4.5",
+    "wujie": "^1.0.22",
     "wujie-vue3": "^1.0.22"
   },
   "devDependencies": {
@@ -25,19 +31,19 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "./.eslintrc-auto-import.json"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-      "no-unused-vars": {
-        "error": 0
-      }
+      "no-unused-vars": "off"
     }
   },
   "browserslist": [

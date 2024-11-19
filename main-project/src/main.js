@@ -1,8 +1,18 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import router from "./router/index";
+import pinia from "./store/index";
+import ElementPlus from "element-plus";
 
-import WujieVue from 'wujie-vue3'
+import 'element-plus/dist/index.css'
+import './style/index.scss'
 
-const app = createApp(App)
+import WujieVue from "wujie-vue3";
 
-app.use(WujieVue).mount('#app')
+const { preloadApp } = WujieVue;
+
+const app = createApp(App);
+
+app.use(router).use(pinia).use(ElementPlus).use(WujieVue).mount("#app");
+
+preloadApp({ name: "vue2", url: "http://localhost:4201/", exec: true });

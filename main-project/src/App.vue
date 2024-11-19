@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>这是主应用</h1>
+    <el-menu>
+      <template v-for="{ children, path, meta } in router" :key="path">
+        <subMenu v-if="children && children.length !== 0"></subMenu>
+        <ElMenuItem v-else :index="path">{{ meta?.title }}</ElMenuItem>
+      </template>
+    </el-menu>
+    <RouterLink to="vue2">vue2</RouterLink>
+    <router-link to="vue3">vue3</router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import subMenu from './components/subMenu.vue'
+const router = useRouter().getRoutes()
+// const router = []
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>

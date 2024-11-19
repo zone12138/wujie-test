@@ -1,19 +1,22 @@
 const { defineConfig } = require("@vue/cli-service");
+const AutoImport = require('unplugin-auto-import/webpack')
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
-    port: 4200,
-    proxy: {
-      "/vue2-project": {
-        target: "http://localhost:4201",
-        ws: true,
-        changeOrigin: true,
-      },
-      "/vue3-project": {
-        target: "http://localhost:4202",
-        ws: true,
-        changeOrigin: true
-      }
+    headers: {
+      "Access-Control-Allow-Origin": "*",
     },
+    port: 4200,
   },
+  configureWebpack: {
+    plugins: [AutoImport({
+      imports: ['vue', 'vue-router', 'pinia'],
+      dts: './src/auto-import.d.ts',
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true
+      }
+    })]
+  }
 });
