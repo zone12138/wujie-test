@@ -17,7 +17,8 @@ const router = createRouter({
       },
       children: [
         {
-          path: '/vue3-1',
+          path: 'vue3-1',
+          component: () => import('@/components/vue2Comp.vue'),
           meta: {
             title: 'vue3-1'
           }
