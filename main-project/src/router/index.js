@@ -4,6 +4,13 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: "/",
+      component: () => import("@/views/homePage.vue"),
+      meta: {
+        title: '主应用首页'
+      }
+    },
+    {
       path: "/vue2",
       component: () => import("@/components/vue2Comp.vue"),
       meta: {

@@ -9,7 +9,7 @@
 <template>
   <section class="main-container">
     <header>
-      <el-menu mode="horizontal" router>
+      <el-menu mode="horizontal" router :default-active="route.path">
         <subMenu v-for="item in router" :key="item.path" :menuData="item" />
       </el-menu>
     </header>
@@ -21,15 +21,18 @@
         </keep-alive>
       </router-view> -->
       <router-view></router-view>
-
-      <div id="vue2-container"></div>
     </main>
+    <footer>
+      <tagsView />
+    </footer>
   </section>
 </template>
 
 <script setup>
-import subMenu from './components/subMenu.vue'
-const router = useRouter().options.routes
+import subMenu from "./components/subMenu.vue";
+import tagsView from "./components/tagsView.vue";
+const router = useRouter().options.routes;
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped>
