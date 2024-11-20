@@ -1,5 +1,5 @@
 <template>
-  <ElSubMenu v-if="menuData.children && menuData.children.length > 0">
+  <ElSubMenu v-if="menuData.children && menuData.children.length > 0" :index="fullPath">
     <template #title>
       {{ menuData?.meta?.title }}
     </template>

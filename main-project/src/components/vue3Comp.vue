@@ -1,11 +1,13 @@
 <template>
-    <div>
-        <h5>vue3Comp</h5>
-    </div>
+  <div>
+    <h5>vue3Comp</h5>
+  </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+onActivated(() => {
+  console.log("vue3 Comp onActivated");
+});
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -9,10 +9,11 @@ import './style/index.scss'
 
 import WujieVue from "wujie-vue3";
 
-const { preloadApp } = WujieVue;
+const { preloadApp, setupApp } = WujieVue;
 
 const app = createApp(App);
 
 app.use(router).use(pinia).use(ElementPlus).use(WujieVue).mount("#app");
 
-preloadApp({ name: "vue2", url: "http://localhost:4201/", exec: true });
+preloadApp({ name: "vue2", url: "http://localhost:4201/", exec: true, alive: true });
+// setupApp({name: "vue2", url: "http://localhost:4201/", exec: true, alive: true})
