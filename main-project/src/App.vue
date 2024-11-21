@@ -10,17 +10,17 @@
   <section class="main-container">
     <header>
       <el-menu mode="horizontal" router :default-active="route.path">
-        <subMenu v-for="item in router" :key="item.path" :menuData="item" />
+        <subMenu v-for="item in menuData" :key="item.path" :menuData="item" />
       </el-menu>
     </header>
     <main>
       <!-- vue-router@4 的写法 -->
-      <!-- <router-view v-slot="{ Component }">
+      <router-view v-slot="{ Component }">
         <keep-alive>
           <component :is='Component'></component>
         </keep-alive>
-      </router-view> -->
-      <router-view></router-view>
+      </router-view>
+      <!-- <router-view /> -->
     </main>
     <footer>
       <tagsView />
@@ -31,8 +31,9 @@
 <script setup>
 import subMenu from "./components/subMenu.vue";
 import tagsView from "./components/tagsView.vue";
-const router = useRouter().options.routes;
+const router = useRouter()
 const route = useRoute();
+const menuData = router.options.routes;
 </script>
 
 <style lang="scss" scoped>

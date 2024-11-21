@@ -7,5 +7,24 @@
  * @Description: vue2 子应用容器
 -->
 <template>
-  <WujieVue height="100%" width="100%" name="vue2" url="http://localhost:4201/" :exec="true" :alive="true"></WujieVue>
+  <WujieVue
+    height="100%"
+    width="100%"
+    name="vue2"
+    :url="url"
+    :alive="true"
+    :activated="activated"
+    :deactivated="deactivated"
+  ></WujieVue>
 </template>
+
+<script setup>
+const url = ref("http://localhost:4201/");
+
+const activated = function() {
+  console.log("vue2 子应用 activated", arguments);
+};
+const deactivated = () => {
+  console.log("vue2 子应用 deactivated");
+};
+</script>
