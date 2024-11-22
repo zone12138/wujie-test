@@ -9,7 +9,7 @@
       @click="handleClick(item)"
       @close="handleClose(item)"
     >
-      {{ item?.meta?.title || "未命名" }}
+      {{ item?.meta?.title || item?.name || "未命名" }}
     </el-tag>
   </div>
 </template>

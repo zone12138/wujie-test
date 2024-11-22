@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "echarts": "^5.5.1",
+    "echarts-gl": "^2.0.9",
     "element-ui": "^2.15.14",
     "sass": "^1.81.0",
     "sass-loader": "9.x",
@@ -38,7 +40,8 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-      "no-unused-vars": "off"
+      "no-unused-vars": "off",
+      "vue/multi-word-component-names": "off"
     }
   },
   "browserslist": [

@@ -22,13 +22,22 @@ function setup() {
 if (window.__POWERED_BY_WUJIE__) {
   let instance;
   const changeRoute = (path = "") => {
-    path = path.replace("/vue2", "");
-    router.replace({ path }).catch(() => {});
+    const prefix = window?.__WUJIE?.id;
+    if (typeof prefix === "string") {
+      if (path.indexOf(`/${prefix}/`) === 0) {
+        path = path.replace(`/${prefix}`, "");
+        setTimeout(() => {
+          // console.log(121212)
+          router.replace({ path }).catch(() => {});
+        }, 400);
+      } else {
+        router.replace({ path: "/empty" }).catch(() => {});
+      }
+    }
   };
   window.__WUJIE_MOUNT = () => {
     instance = setup();
     window.$wujie?.bus.$on("change-child-route", changeRoute);
-    console.log(instance)
   };
   window.__WUJIE_UNMOUNT = () => {
     instance?.$destroy();

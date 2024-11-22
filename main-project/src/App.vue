@@ -17,10 +17,20 @@
       <!-- vue-router@4 的写法 -->
       <router-view v-slot="{ Component }">
         <keep-alive>
-          <component :is='Component'></component>
+          <component :is="Component"></component>
         </keep-alive>
       </router-view>
       <!-- <router-view /> -->
+      <WujieVue
+        v-for="item in appInfos"
+        :key="item.name"
+        v-show="handleShowWujie(item)"
+        height="100%"
+        width="100%"
+        v-bind="item"
+        :activated="handleActivated"
+        :deactivated="handleDeactivated"
+      ></WujieVue>
     </main>
     <footer>
       <tagsView />
@@ -31,9 +41,20 @@
 <script setup>
 import subMenu from "./components/subMenu.vue";
 import tagsView from "./components/tagsView.vue";
-const router = useRouter()
+import { appInfos } from "./wujie/register";
+const router = useRouter();
 const route = useRoute();
 const menuData = router.options.routes;
+const handleShowWujie = (item) =>
+  computed(() => route.path.indexOf(`/${item.name}/`) === 0).value;
+
+const handleActivated = () => {
+  console.log("进入 子应用");
+};
+
+const handleDeactivated = () => {
+  console.log("离开 子应用");
+};
 </script>
 
 <style lang="scss" scoped>

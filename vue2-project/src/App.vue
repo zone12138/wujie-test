@@ -7,16 +7,7 @@
 </template>
 
 <script>
-import lifecycle from "./utils/lifecycleMixin";
-
 export default {
   name: "App",
-  mixins: [lifecycle],
 };
 </script>
-
-<style>
-#app {
-  text-align: center;
-}
-</style>

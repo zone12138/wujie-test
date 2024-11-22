@@ -4,7 +4,7 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      redirect: "/home",
+      redirect: window.$wujie? "/empty" : "/home",
     },
     {
       path: "/home",
@@ -14,6 +14,10 @@ const router = new VueRouter({
       path: "/carousel",
       component: () => import("@/views/carouselView.vue"),
     },
+    {
+      path: '/empty',
+      component: () => import("@/components/Empty.vue")
+    }
   ],
 });
 

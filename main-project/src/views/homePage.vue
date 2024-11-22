@@ -1,13 +1,14 @@
 <template>
-    <h2>HOME</h2>
+    <h1>HOME</h1>
 </template>
 
 <script setup>
 </script>
 
 <style lang="scss" scoped>
-h2 {
-    white-space: 2rem;
+h1 {
+    // letter-spacing: 2rem;
     text-align: center;
+    font-family: Kingsoft_cloud;
 }
 </style>
