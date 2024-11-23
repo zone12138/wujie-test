@@ -1,6 +1,6 @@
 <!--
  * @FileDescription: 3D 柱状图 2
- * @Author: 谢灿锐
+ * @Author: xie
  * @Date: 2024-11-13 10:05:46
  -->
 <template>

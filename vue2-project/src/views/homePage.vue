@@ -2,7 +2,6 @@
   <div class="home-container">
     <div class="bar-content">
       <bar3D />
-       1234csv大发发
     </div>
     <div class="bar-content">
       <bar3DTwo />
@@ -36,8 +35,6 @@ export default {
     padding: 20px;
     border: 1px solid #efefef;
     border-radius: 50px;
-    font-family: Kingsoft_cloud;
-    color: red;
   }
 }
 </style>

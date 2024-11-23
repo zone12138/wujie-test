@@ -26,8 +26,9 @@ if (window.__POWERED_BY_WUJIE__) {
     if (typeof prefix === "string") {
       if (path.indexOf(`/${prefix}/`) === 0) {
         path = path.replace(`/${prefix}`, "");
+        // 由于主应用中使用了v-show来显示/隐藏子应用，所以子应用切换路由时，需要先显示，再切换路由
+        // 用于解决页面中有echarts相关图表或者一些需要在activated生命周期重新计算宽高的组件的宽度高度问题，
         setTimeout(() => {
-          // console.log(121212)
           router.replace({ path }).catch(() => {});
         }, 400);
       } else {
