@@ -55,7 +55,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  useEmit("change-child-route", to.path);
+  useEmit("change-child-route", to.path, from.path);
   next();
 });
 

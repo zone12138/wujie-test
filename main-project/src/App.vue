@@ -14,13 +14,15 @@
       </el-menu>
     </header>
     <main>
+      <!-- 主应用页面 -->
       <!-- vue-router@4 的写法 -->
       <router-view v-slot="{ Component }">
         <keep-alive>
           <component :is="Component"></component>
         </keep-alive>
       </router-view>
-      <!-- <router-view /> -->
+      
+      <!-- 子应用页面 -->
       <WujieVue
         v-for="item in appInfos"
         :key="item.name"
