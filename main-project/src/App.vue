@@ -13,27 +13,29 @@
         <subMenu v-for="item in menuData" :key="item.path" :menuData="item" />
       </el-menu>
     </header>
-    <main>
-      <!-- 主应用页面 -->
-      <!-- vue-router@4 的写法 -->
-      <router-view v-slot="{ Component }">
-        <keep-alive>
-          <component :is="Component"></component>
-        </keep-alive>
-      </router-view>
-      
-      <!-- 子应用页面 -->
-      <WujieVue
-        v-for="item in appInfos"
-        :key="item.name"
-        v-show="handleShowWujie(item)"
-        height="100%"
-        width="100%"
-        v-bind="item"
-        :activated="handleActivated"
-        :deactivated="handleDeactivated"
-      ></WujieVue>
-    </main>
+    <ElWatermark class="watermark" content="wujie-test">
+      <main>
+        <!-- 主应用页面 -->
+        <!-- vue-router@4 的写法 -->
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component"></component>
+          </keep-alive>
+        </router-view>
+
+        <!-- 子应用页面 -->
+        <WujieVue
+          v-for="item in appInfos"
+          :key="item.name"
+          v-show="handleShowWujie(item)"
+          height="100%"
+          width="100%"
+          v-bind="item"
+          :activated="handleActivated"
+          :deactivated="handleDeactivated"
+        ></WujieVue>
+      </main>
+    </ElWatermark>
     <footer>
       <tagsView />
     </footer>
@@ -70,10 +72,13 @@ const handleDeactivated = () => {
   height: 100%;
   width: 100%;
 
-  main {
-    position: relative;
+  .watermark {
     flex: 1;
     overflow: hidden;
+    main {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 </style>
