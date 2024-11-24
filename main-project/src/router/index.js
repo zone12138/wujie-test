@@ -34,6 +34,13 @@ const router = createRouter({
             title: "vue2 子应用走马灯",
           },
         },
+        {
+          path: "elementUI",
+          name: 'vue2 子应用elementUI',
+          meta: {
+            title: "vue2 子应用elementUI",
+          }
+        }
       ],
     },
     {

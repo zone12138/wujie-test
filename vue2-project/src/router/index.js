@@ -14,6 +14,10 @@ const router = new VueRouter({
       path: "/carousel",
       component: () => import("@/views/carouselView.vue"),
     },
+    {
+      path: "/elementUI",
+      component: () => import("@/views/elementUIView.vue"),
+    },
     // 用于离开子应用时，手动切换路由，使页面进入 deactivated 生命周期，然后再进进入时，手动切换回子应用，使页面进入 activated 生命周期
     {
       path: "/empty",
