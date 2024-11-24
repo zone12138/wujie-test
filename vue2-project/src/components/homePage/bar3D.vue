@@ -26,12 +26,12 @@ export default {
     this.initChart();
   },
   activated() {
-    console.log('activated')
+    // console.log('activated')
     this.handleResize();
     this.stopListen = this.registerEvent();
   },
   deactivated() {
-    console.log('deactivated')
+    // console.log('deactivated')
     typeof this.stopListen === "function" && this.stopListen();
   },
   beforeDestroy() {
@@ -389,7 +389,6 @@ export default {
      */
     handleResize() {
       this.$nextTick(() => {
-        console.log("resize");
         this.chart?.resize();
       });
     },

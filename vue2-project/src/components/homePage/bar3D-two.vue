@@ -326,7 +326,6 @@ export default {
      * resize 饼图
      */
     handleResize() {
-      console.log("resize");
       this.$nextTick(() => {
         this.chart?.resize();
       });
