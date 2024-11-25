@@ -12,7 +12,7 @@ Vue.use(ElementUI);
 import "./style/index.scss";
 import "element-ui/lib/theme-chalk/index.css";
 
-import { subscribe, stopSubscribe } from '@/busEvents/index'
+import { subscribe, stopSubscribe } from '@/busEvents/subscribe'
 
 function setup() {
   return new Vue({

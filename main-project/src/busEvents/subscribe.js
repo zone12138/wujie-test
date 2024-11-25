@@ -1,4 +1,5 @@
-import { useOn } from "./index";
+import { useOff, useOn } from "./index";
+import router from '@/router/index'
 import { ElMessage, ElNotification } from "element-plus";
 
 /**
@@ -25,12 +26,17 @@ const subscribeNotify = function () {
   }
 };
 
+const subscribeJump = function (option) {
+  router.push(option)
+}
+
 /**
  * 全局订阅
  */
 const subscribe = () => {
   useOn("global-message", subscribeMessage);
   useOn("global-notify", subscribeNotify);
+  useOn("global-jump", subscribeJump)
 };
 
 /**
@@ -39,6 +45,7 @@ const subscribe = () => {
 const stopSubscribe = () => {
   useOff("global-message", subscribeMessage);
   useOff("global-notify", subscribeNotify);
+  useOff("global-jump", subscribeJump)
 };
 
 export { subscribe, stopSubscribe };
