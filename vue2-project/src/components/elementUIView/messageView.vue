@@ -12,14 +12,14 @@ export default {
      * 显示消息
      */
     handleShowMessage() {
-      useEmit("global-message", "error", "消息提示是被插入到了子应用中而不是主应用中");
+      useEmit("global-message", "error", "【向主应用发起通信】消息提示是被插入到了子应用中而不是主应用中");
     },
     /**
      * 显示通知
      */
     handleShowNotify() {
       useEmit("global-notify", {
-        title: "标题名称",
+        title: "【向主应用发起通信】",
         dangerouslyUseHTMLString: true,
         message:
           '<strong><span style="color: #ff0000;">通知提示</span> <span style="color: #0000ff;">是被插入到了子应用中而不是主应用中</span></strong>',

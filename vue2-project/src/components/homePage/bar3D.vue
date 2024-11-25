@@ -1,8 +1,3 @@
-<!--
- * @FileDescription: 3D 柱状图 1
- * @Author: xie
- * @Date: 2024-11-13 10:05:46
- -->
 <template>
   <div ref="3DBar"></div>
 </template>
@@ -12,13 +7,16 @@ import * as echarts from "echarts";
 export default {
   data() {
     return {
+      // 柱状图数据
       barData: [
         { name: "广州", total: 187, levelTwo: 120, levelOne: 63, levelZero: 4 },
         { name: "东莞", total: 22, levelTwo: 12, levelOne: 10, levelZero: 0 },
         { name: "深圳", total: 81, levelTwo: 60, levelOne: 21, levelZero: 0 },
         { name: "佛山", total: 40, levelTwo: 23, levelOne: 15, levelZero: 2 },
       ],
+      // 停止监听方法
       stopListen: null,
+      // 颜色列表
       colorList: ["#0C6DDC", "#41B8C1", "#D5C576", "#7373DC"],
     };
   },
@@ -39,14 +37,15 @@ export default {
   },
   methods: {
     /**
-     *
+     * 注册 resize 监听事件
+     * @returns 取消 resize 事件监听
      */
     registerEvent() {
       window.addEventListener("resize", this.handleResize);
       return () => window.removeEventListener("resize", this.handleResize);
     },
     /**
-     *
+     * 画图
      */
     initChart() {
       this.chart = echarts.init(this.$refs["3DBar"]);

@@ -1,8 +1,3 @@
-<!--
- * @FileDescription: 3D 柱状图 2
- * @Author: xie
- * @Date: 2024-11-13 10:05:46
- -->
 <template>
   <div ref="3DBar"></div>
 </template>
@@ -12,6 +7,7 @@ import * as echarts from "echarts";
 export default {
   data() {
     return {
+      // 柱状图数据
       barData: [
         { name: "2007", value: 23.64 },
         { name: "2008", value: 12.85 },
@@ -31,7 +27,9 @@ export default {
         { name: "2022", value: 0.73 },
         { name: "2023", value: 10.52 },
       ],
+      // 停止监听方法
       stopListen: null,
+      // 颜色列表
       colorList: ["#0C6DDC", "#41B8C1", "#D5C576", "#7373DC"],
     };
   },
@@ -50,14 +48,15 @@ export default {
   },
   methods: {
     /**
-     *
+     * 注册 resize 监听事件
+     * @returns 取消 resize 事件监听
      */
     registerEvent() {
       window.addEventListener("resize", this.handleResize);
       return () => window.removeEventListener("resize", this.handleResize);
     },
     /**
-     *
+     * 画图
      */
     initChart() {
       this.chart = echarts.init(this.$refs["3DBar"]);

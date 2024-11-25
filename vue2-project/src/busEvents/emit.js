@@ -6,8 +6,8 @@ export const isWujie = window.$wujie !== undefined && window.__POWERED_BY_WUJIE_
 
 /**
  * 子应用向主应用发送消息
- * @param {string} eventName 
- * @param  {...any} data 
+ * @param {string} eventName 事件名称
+ * @param  {...any} data 参数数据
  */
 export const useEmit = (eventName, ...data) => {
   if (isWujie && typeof eventName === "string") {

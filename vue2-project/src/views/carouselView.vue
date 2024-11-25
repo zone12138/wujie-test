@@ -1,5 +1,7 @@
 <template>
-  <h1>CAROUSEL VIEW</h1>
+  <div>
+    <h1>CAROUSEL VIEW</h1>
+  </div>
 </template>
 
 <script>
