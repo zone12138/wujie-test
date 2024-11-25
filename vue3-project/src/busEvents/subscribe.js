@@ -18,7 +18,7 @@ const changeRoute = (toPath = "", fromPath = "") => {
         // 用于解决页面中有echarts相关图表或者一些需要在activated生命周期重新计算宽高的组件的宽度高度问题，
         setTimeout(() => {
           router.replace({ path });
-        }, 400);
+        }, 0);
       }
     } else {
       router.replace({ path: "/empty" });

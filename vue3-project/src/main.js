@@ -3,7 +3,6 @@ import App from "./App.vue";
 
 import router from "@/router/index";
 
-import ElementPlus from "element-plus";
 import "@/style/index.scss";
 import 'element-plus/dist/index.css'
 import "element-plus/theme-chalk/dark/css-vars.css";
@@ -11,7 +10,7 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 import { subscribe, stopSubscribe } from "@/busEvents/subscribe";
 
 function setup() {
-  return createApp(App).use(router).use(ElementPlus).mount("#app");
+  return createApp(App).use(router).mount("#app");
 }
 
 if (window.__POWERED_BY_WUJIE__) {

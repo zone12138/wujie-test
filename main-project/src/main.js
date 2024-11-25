@@ -17,8 +17,9 @@ const app = createApp(App);
 app.use(router).use(pinia).use(ElementPlus).use(WujieVue).mount("#app");
 
 subscribe();
-app.onUnmount(stopSubscribe)
+app.onUnmount(stopSubscribe);
 
 appInfos.forEach((v) => {
   setupApp(v);
+  if (v.isPreload) preloadApp(v);
 });

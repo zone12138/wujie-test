@@ -5,11 +5,13 @@ export const appInfos = [
     url: "http://localhost:4201/",
     exec: true,
     alive: true,
+    isPreload: true,
   },
   {
     name: __SUBAPP_VUE3DEMO__,
     url: "http://localhost:4202/",
     exec: true,
     alive: true,
+    isPreload: true,
   },
 ];
