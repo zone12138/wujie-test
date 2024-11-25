@@ -1,28 +1,20 @@
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import { isWujie } from "@/busEvents/emit";
 
-const router = new VueRouter({
+const router = new createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
-      redirect: isWujie ? "/empty" : "/home",
+      redirect: isWujie ? "/empty" : "home",
     },
     {
       path: "/home",
       component: () => import("@/views/homePage.vue"),
     },
     {
-      path: "/carousel",
-      component: () => import("@/views/carouselView.vue"),
-    },
-    {
-      path: "/elementUI",
-      component: () => import("@/views/elementUIView.vue"),
-    },
-    // 用于离开子应用时，手动切换路由，使页面进入 deactivated 生命周期，然后再进进入时，手动切换回子应用，使页面进入 activated 生命周期
-    {
       path: "/empty",
-      component: () => import("@/components/Empty.vue"),
+      component: () => import("@/views/emptyView.vue"),
     },
   ],
 });

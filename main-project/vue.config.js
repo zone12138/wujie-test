@@ -22,6 +22,7 @@ module.exports = defineConfig({
       }),
       new webpack.DefinePlugin({
         __SUBAPP_VUE2DEMO__: JSON.stringify("subApp_Vue2Demo"),
+        __SUBAPP_VUE3DEMO__: JSON.stringify("subApp_Vue3Demo"),
       }),
     ],
   },

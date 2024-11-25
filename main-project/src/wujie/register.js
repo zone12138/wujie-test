@@ -6,4 +6,10 @@ export const appInfos = [
     exec: true,
     alive: true,
   },
+  {
+    name: __SUBAPP_VUE3DEMO__,
+    url: "http://localhost:4202/",
+    exec: true,
+    alive: true,
+  },
 ];
