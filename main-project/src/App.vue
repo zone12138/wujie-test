@@ -9,9 +9,9 @@
 <template>
   <section class="main-container">
     <header>
-      <el-menu mode="horizontal" router :default-active="route.path">
+      <ElMenu mode="horizontal" router :default-active="route.path">
         <subMenu v-for="item in menuData" :key="item.path" :menuData="item" />
-      </el-menu>
+      </ElMenu>
     </header>
     <ElWatermark class="watermark" content="wujie-test">
       <main>
