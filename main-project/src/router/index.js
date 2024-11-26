@@ -56,6 +56,13 @@ const router = createRouter({
             title: "vue3 子应用首页",
           },
         },
+        {
+          path: "basemap",
+          name: "vue3 子应用地图",
+          meta: {
+            title: "vue3 子应用地图",
+          },
+        },
       ],
     },
   ],

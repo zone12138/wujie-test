@@ -13,6 +13,10 @@ const router = new createRouter({
       component: () => import("@/views/homePage.vue"),
     },
     {
+      path: '/basemap',
+      component: () => import("@/views/baseMap.vue")
+    },
+    {
       path: "/empty",
       component: () => import("@/views/emptyView.vue"),
     },

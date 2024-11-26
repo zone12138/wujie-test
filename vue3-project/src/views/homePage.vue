@@ -19,7 +19,6 @@
 
 <script setup>
 import { useEmit } from "@/busEvents/emit";
-import { ElCard } from "element-plus";
 
 /**
  * 跳转至vue2Demo的首页
